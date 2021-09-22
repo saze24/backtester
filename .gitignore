@@ -127,3 +127,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+backtester/web/templates/ohcl_chart.html
+backtester/web/database/backtester_database.db
