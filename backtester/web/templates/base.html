@@ -34,9 +34,6 @@
             {% if session['data_exists'] == True %}
               <a class="nav-item nav-link" id="results" href="/results">Individual Results</a>
               <a class="nav-item nav-link" id="group_results" href="/group_results">Group Results</a>
-              {% if session['selected_group_details'] == True %}
-                <a class="nav-item nav-link" id="group_details" href="/group_details">Group Details</a>
-              {% endif %}
             {% endif %}
             {% if session['saved_results_exist'] == True %}
               <a class="nav-item nav-link" id="saved_results" href="/saved_results">Saved Results</a>
