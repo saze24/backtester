@@ -1,6 +1,5 @@
 # Backtester App
-This app tests the Moving Average Crossover Strategy to find out which set of variables maximizes profit.  
-A description of the project and diagrams are located in the documentation folder.
+This app tests the Moving Average Crossover Strategy to find out which set of variables maximizes profit.  A description of the project and diagrams are located in the documentation folder.
 
 ## Setup & Installation
 
