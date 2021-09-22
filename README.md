@@ -14,13 +14,13 @@ git clone <repo-url>
 pip install -r requirements.txt
 ```
 
-## Running The App
+## Run The App
 
 ```
 python main.py
 ```
 
-## Viewing The App
+## View The App
 
 Open `http://127.0.0.1:5000` with your web browser.
 
