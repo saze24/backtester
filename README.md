@@ -1,8 +1,8 @@
 # Backtester APP
-Test the Moving Average Crossover Strategy to maximize profit for the given instrument over the specific time period.
-A full description of the project is located in the documentation folder.
+The APP tests the Moving Average Crossover Strategy to maximize profit for the given instrument over the specific time period.
+A description of the project and diagrams are located in the documentation folder.
 
-## Setup & Installtion
+## Setup & Installation
 
 Make sure you have the latest version of Python installed.
 
