@@ -195,6 +195,13 @@ def group_details():
         col = [desc[0].lower() for desc in cur.description]
         group_details = []
 
+        # Change float from 0.05 to 5%
+        rec_list = [list(t) for t in rec_list]
+        for x in range(len(rec_list)):
+            rec_list[x][4] = str( round(rec_list[x][4]*100, 1)) + '%'
+            rec_list[x][5] = str( round(rec_list[x][5]*100, 1)) + '%'
+            rec_list[x][6] = str( round(rec_list[x][6]*100, 1)) + '%'
+
         # Create a  strategy results dictionary
         for row in rec_list:
             dic = dict(zip(col, row))

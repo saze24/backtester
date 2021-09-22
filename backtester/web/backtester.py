@@ -676,9 +676,9 @@ def retrieve_top_strats(test_variable_range_id):
         res = [list(t) for t in res]
 
         for x in range(len(res)):
-            res[x][4] = str( round(res[x][4]*100) ) + '%'
-            res[x][5] = str( round(res[x][5]*100) ) + '%'
-            res[x][6] = str( round(res[x][6]*100) ) + '%'
+            res[x][4] = str( round(res[x][4]*100, 1) ) + '%'
+            res[x][5] = str( round(res[x][5]*100, 1) ) + '%'
+            res[x][6] = str( round(res[x][6]*100, 1) ) + '%'
 
         # Zip the columns and fields into a nested dictionary    
         for row in res:
