@@ -1,0 +1,60 @@
+{% extends "base.html" %} 
+{% block title %} Group Results {% endblock %} 
+{% block content %}
+
+<form method="POST">
+  <br />
+  <div class='row'>
+    <div class='col'>
+      <h2>Top Group Results</h2>
+    </div>
+  </div>  
+
+  <br />
+  <h5>Results grouped by Fast MA and Slow MA which appear more than twice in the top 200 individual results </h5>
+  <br />
+
+  <table class="table-hover table-responsive table table-striped">
+    <thead>
+      <tr> 
+        <th scope='col'>#</th>
+        <th scope='col'>Fast MA</th>
+        <th scope='col'>Slow MA</th>
+        <th scope='col'>Avg. Stop Loss</th>
+        <th scope='col'>Avg. Take Profit</th>
+        <th scope='col'>Top PNL</th>
+        <th scope='col'>Avg. PNL</th>
+        <th scope='col'>Freq. in Top 200 </th>
+      </tr>
+    </thead>
+
+    <tbody>
+          {% if top_group_results %}
+              {% for res in top_group_results %}
+              <tr>
+                  <td>{{ loop.index }}</td>
+                  <td>{{ res.fast_ma }}</td>
+                  <td>{{ res.slow_ma }}</td>
+                  <td>{{ res.avg_sl }}</td>
+                  <td>{{ res.avg_tp }}</td>
+                  <td>{{ res.top_pnl }}</td>
+                  <td>{{ res.avg_pnl }}</td>
+                  <td>{{ res.freq }}</td>
+                  <td>
+                    <button type="submit" class="btn btn-primary" name='idx' value={{ loop.index }}>Group Details</button>
+                  </td>
+                </tr>
+              {% endfor %}
+          {% else %}
+          {% endif %}
+    </tbody>
+  </table>
+</form>
+
+<br />
+<p class="mb-0">This application is intended for demonstration purposes only.
+  No financial advice is given or implied.</p>
+<br />
+<br />
+
+    {% endblock %}

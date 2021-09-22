@@ -1,0 +1,56 @@
+{% extends "base.html" %} 
+{% block title %} Test Results {% endblock %} 
+{% block content %}
+
+<form method="POST">
+  <br />
+  <div class='row'>
+    <h2>Top Individual Results</h2>
+  </div>
+
+  <br />
+  <h5>Top 50 results ordered by Total PNL</h5>
+  <br />
+
+  <table class="table-hover table-responsive table table-striped">
+    <thead>
+      <tr> 
+        <th scope='col'>#</th>
+        <th scope='col'>Fast MA</th>
+        <th scope='col'>Slow MA</th>
+        <th scope='col'>Stop Loss</th>
+        <th scope='col'>Take Profit</th>
+        <th scope='col'>Total PNL</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% if top_results %}
+        {% for res in top_results %}
+          <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ res.fast_ma }}</td>
+            <td>{{ res.slow_ma }}</td>
+            <td>{{ res.stop_loss }}</td>
+            <td>{{ res.take_profit }}</td>
+            <td>{{ res.total_pnl }}</td>
+            <td>
+              <button type="submit" class="btn btn-primary btn-sm" name="strat_res_id" 
+                value={{ res.strategy_results_id }}>View Chart</button>
+            </td>
+          </tr>
+        {% endfor %}
+      {% else %}
+        <p class="mb-0">Pleas run test first.</p>
+      {% endif %}
+      </tbody>
+    </table>
+  </form>
+
+  <br />
+  <p class="mb-0">This application is intended for demonstration purposes only.
+    No financial advice is given or implied.
+  </p>
+  <br />
+  <br />
+    {% endblock %}

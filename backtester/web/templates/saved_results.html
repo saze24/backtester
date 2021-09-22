@@ -1,0 +1,57 @@
+{% extends "base.html" %} 
+{% block title %} Saved Results {% endblock %} 
+{% block content %}
+
+<form method="POST">
+  <br />
+  <div class='row'>
+    <div class='col'>
+    <h2>Saved Results</h2>
+    </div>
+  </div>
+
+  <br />
+  <h5>Load results from previous tests</h5>
+  <br />
+
+  <table class="table-hover table-responsive table table-striped">
+    <thead>
+      <tr> 
+        <th scope='col'>Test Name</th>
+        <th scope='col'>Fast MA Range</th>
+        <th scope='col'>Slow MA Range</th>
+        <th scope='col'>Stop Loss Range</th>
+        <th scope='col'>Take Profit Range</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% if test_name %}
+        {% for res in test_name %}
+          <tr>
+            <td>{{ res.test_name }}</td>
+            <td>{{ res.fast_ma_low }}&nbsp;-&nbsp;{{ res.fast_ma_high }}</td>
+            <td>{{ res.slow_ma_low }}&nbsp;-&nbsp;{{ res.slow_ma_high }}</td>
+            <td>{{ res.stop_loss_low*100 }}%&nbsp;-&nbsp;{{ res.stop_loss_high*100 }}%</td>
+            <td>{{ res.take_profit_low*100 }}%&nbsp;-&nbsp;{{ res.take_profit_high*100 }}%</td>
+            <td>
+              <button type="submit" class="btn btn-primary btn-sm" id="test_variable_range_id" 
+                name="test_variable_range_id" value={{ res.test_variable_range_id }}>Load Results</button>
+            </td>
+          </tr>
+        {% endfor %}
+      {% else %}
+        <p class="mb-0">No saved results.  Please run test first.</p>
+      {% endif %}
+      </tbody>
+    </table>
+  </form>
+
+  <br />
+  <p class="mb-0">This application is intended for demonstration purposes only.
+    No financial advice is given or implied.
+  </p>
+  <br />
+  <br />
+
+    {% endblock %}

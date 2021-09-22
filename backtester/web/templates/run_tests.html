@@ -1,0 +1,144 @@
+{% extends "base.html" %} 
+{% block title %}Backtester{% endblock %} 
+{% block content %}
+
+        
+<form method="POST">
+
+    <br />
+    <h2 align="left">Backtester</h2>
+    <br />
+    <h5 align="left">Choose a range of variables to test</h5>
+    <br />
+
+    
+    <div class="container">
+        <div class="form-group row">
+            <div class="column">
+                <label for="fast_ma_low">Fast Moving Average: &emsp; From &nbsp;</label>
+                <select class="form-select" id="fast_ma_low" name="fast_ma_low">
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7" selected>7</option>
+                </select>
+            </div>
+
+            <div class="column">
+                <label for="fast_ma_high">&nbsp;&nbsp;&nbsp;&nbsp;To&nbsp;</label>
+                <select class="form-select" id="fast_ma_high" name="fast_ma_high">
+                    <option value="8" selected>8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <div class="column">
+                <label for="slow_ma_low">Slow Moving Average: &nbsp;&nbsp; From &nbsp;</label>
+                <select class="form-select" id="slow_ma_low" name="slow_ma_low">
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14" selected>14</option>
+                </select>
+            </div>
+
+            <div class="column">
+                <label for="slow_ma_high">&nbsp;&nbsp;To&nbsp;</label>
+                <select class="form-select" id="slow_ma_high" name="slow_ma_high">
+                    <option value="15" selected>15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="19">20</option>
+                </select>
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <div class="column">
+                <label for="stop_loss_low">Stop Loss: &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; From &nbsp;</label>
+                <select class="form-select" id="stop_loss_low" name="stop_loss_low">
+                    <option value="1">1%</option>
+                    <option value="2">2%</option>
+                    <option value="3">3%</option>
+                    <option value="4">4%</option>
+                    <option value="5" selected>5%</option>
+                </select>
+            </div>
+
+            <div class="column">
+                <label for="stop_loss_high">&nbsp;To&nbsp;</label>
+                <select class="form-select" id="stop_loss_high" name="stop_loss_high">
+                    <option value="6" selected>6%</option>
+                    <option value="7">7%</option>
+                    <option value="8">8%</option>
+                    <option value="9">9%</option>
+                    <option value="10">10%</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="column">
+                <label for="take_profit_low">Take Profit: &ensp;&emsp;&emsp;&emsp;&emsp;&emsp; From &nbsp;</label>
+                <select class="form-select" id="take_profit_low" name="take_profit_low">
+                    <option value="2">2%</option>
+                    <option value="3">3%</option>
+                    <option value="4">4%</option>
+                    <option value="5">5%</option>
+                    <option value="6">6%</option>
+                    <option value="7">7%</option>
+                    <option value="8" selected>8%</option>
+                </select>
+            </div>
+
+            <div class="column">
+                <label for="take_profit_high">&nbsp;To&nbsp;</label>
+                <select class="form-select" id="take_profit_high" name="take_profit_high">
+                    <option value="9"  selected>9%</option>
+                    <option value="10">10%</option>
+                    <option value="11">11%</option>
+                    <option value="12">12%</option>
+                    <option value="13">13%</option>
+                    <option value="14">14%</option>
+                    <option value="15">15%</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <input type="text" class="form-control" placeholder="New Test Name" aria-label="New Test Name" 
+                    aria-describedby="basic-addon2" name="test_name", id="test_name" required>
+            </div>
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-primary" >Run New Tests</button>
+            </div>
+            <div class="col-sm"></div>
+            <div class="col-sm"></div>
+        </div>
+    </div>
+</form> 
+
+<br />
+<br />
+<p class="mb-0">This application is intended for demonstration purposes only.
+    No financial advice is given or implied.
+</p>
+<br />
+<br />
+
+{% endblock %}
